@@ -11,5 +11,5 @@ Besides the full manual work, another challenge was that the existing software f
 
 <br><br>
 ---
-<img src="assets/eu_flag.jpg" height="50" align="left" style="margin: 5px 10px 0 0">
+<img src="eu_flag.jpg" height="50" align="left" style="margin: 5px 10px 0 0">
 <div style="text-align: justify">AI4Life has received funding from the European Union's Horizon Europe research and innovation programme under grant agreement number 101057970. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.</div>
