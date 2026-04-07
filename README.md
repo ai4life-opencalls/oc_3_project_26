@@ -61,7 +61,7 @@ Raw tomogram
 
 ### Stage 2 — 3D U-Net segmentation
 
-A **3D U-Net** is trained on the nnInteractive-generated labels to produce a fully automated segmentation model.
+A **3D U-Net** [Biapy](https://github.com/BiaPyX/BiaPy) is trained on the nnInteractive-generated labels to produce a fully automated segmentation model.
 
 - Input: raw or deconvolved tomogram (`.mrc`)
 - Output: multi-class segmentation mask — one label per doublet (1–9) + background
