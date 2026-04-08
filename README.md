@@ -87,7 +87,7 @@ From the segmented mask, the following steps are applied automatically:
 
 ## Initial Results
 
-https://github.com/user-attachments/assets/9029d688-78dd-4be9-8d14-a2aaa4f0717a   <img width="854" height="850" alt="Screenshot 2026-04-08 at 10 33 59" src="https://github.com/user-attachments/assets/e6aaa128-6bb0-4d87-893a-e9f9bb2b0407" />
+ https://github.com/user-attachments/assets/39c01d95-9c20-42b8-a3e5-4dadaa8afd51 <img width="854" height="850" alt="Screenshot 2026-04-08 at 10 33 59" src="https://github.com/user-attachments/assets/e6aaa128-6bb0-4d87-893a-e9f9bb2b0407" />
 
 **Figure 1 | Automated microtubule doublet labelling from cryo-ET tomograms using nnInteractive.**
 *(Left)* A user provides sparse point clicks on a tomogram cross-section; nnInteractive propagates
@@ -105,3 +105,7 @@ averaging in RELION.
 ---
 <img src="eu_flag.jpg" height="50" align="left" style="margin: 5px 10px 0 0">
 <div style="text-align: justify">AI4Life has received funding from the European Union's Horizon Europe research and innovation programme under grant agreement number 101057970. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.</div>
+
+
+
+
