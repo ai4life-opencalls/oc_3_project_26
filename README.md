@@ -96,15 +96,15 @@ https://github.com/user-attachments/assets/a8e1e123-da95-4996-9612-b66ac98f6d88
 </div>
 
 > **Figure 1 | Automated microtubule doublet labelling from cryo-ET tomograms using nnInteractive.**
-*(Top)* A user provides sparse point clicks on a tomogram cross-section; nnInteractive propagates
-these into dense 3D segmentation masks covering the microtubule doublets of the axoneme. 
-Labels are generated in a fraction of the time required for manual annotation and serve as 
-training data for the downstream 3D U-Net segmentation model.
-*(Bottom)* Longitudinal slice through the tomogram showing four individually colour-coded microtubule
-doublets (red, teal, yellow, and light green) traced along their full length. Each colour corresponds
-to a distinct doublet identity, demonstrating that the labelling correctly separates adjacent doublets
-running in parallel — a critical prerequisite for polarity assignment and downstream subtomogram
-averaging in RELION.
+> *(Top)* A user provides sparse point clicks on a tomogram cross-section; nnInteractive propagates
+> these into dense 3D segmentation masks covering the microtubule doublets of the axoneme. 
+> Labels are generated in a fraction of the time required for manual annotation and serve as 
+> training data for the downstream 3D U-Net segmentation model.
+> *(Bottom)* Longitudinal slice through the tomogram showing four individually colour-coded microtubule
+> doublets (red, teal, yellow, and light green) traced along their full length. Each colour corresponds
+> to a distinct doublet identity, demonstrating that the labelling correctly separates adjacent doublets
+> running in parallel — a critical prerequisite for polarity assignment and downstream subtomogram
+> averaging in RELION.
 
 ## 3D U-Net Segmentation Output
 
