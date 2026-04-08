@@ -104,6 +104,23 @@ to a distinct doublet identity, demonstrating that the labelling correctly separ
 running in parallel — a critical prerequisite for polarity assignment and downstream subtomogram
 averaging in RELION.
 
+## 3D U-Net Segmentation Output
+
+<div align="center">
+
+<img width="400" alt="3D U-Net cross-sectional segmentation of axoneme microtubule doublets" ![image](https://github.com/user-attachments/assets/b6970e02-3375-4bdc-a506-a22a791ea95a) />
+
+</div>
+
+> **Figure 2 | Cross-sectional segmentation of axoneme microtubule doublets by the 3D U-Net.**
+> Tomogram cross-section showing the predicted segmentation mask (green) overlaid on the raw
+> cryo-ET data. The 3D U-Net correctly identifies the nine microtubule doublets arranged in the
+> characteristic ring geometry of the axoneme, as well as the central pair of microtubules.
+> The asymmetric distribution of segmented doublets around the ring reflects the inherent
+> structural polarity of the axoneme — a key feature that the model learns to capture and
+> that enables downstream polarity assignment without manual intervention.
+
+
 ---
 <img src="eu_flag.jpg" height="50" align="left" style="margin: 5px 10px 0 0">
 <div style="text-align: justify">AI4Life has received funding from the European Union's Horizon Europe research and innovation programme under grant agreement number 101057970. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.</div>
