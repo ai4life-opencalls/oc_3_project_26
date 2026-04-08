@@ -85,6 +85,15 @@ From the segmented mask, the following steps are applied automatically:
 
   <em>On the left, a cross-section showing 9 doublets arranged in circle around central pair of microtubules (here the tip of the cilium is pointing into the page). On the rigth, the image of data along the length of the axoneme/microtubule doublets (longitudinal section along the axoneme).
 
+## Initial Results
+
+https://github.com/user-attachments/assets/9029d688-78dd-4be9-8d14-a2aaa4f0717a
+
+**Figure 1 | Interactive microtubule doublet labelling using nnInteractive.**
+A user provides sparse point clicks on a cryo-ET tomogram cross-section; nnInteractive
+propagates these into dense 3D segmentation masks covering all 9 microtubule doublets
+of the axoneme. Labels are generated in a fraction of the time required for manual
+annotation and serve as training data for the downstream 3D U-Net segmentation model.
 
 
 <br><br>
