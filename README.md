@@ -87,13 +87,15 @@ From the segmented mask, the following steps are applied automatically:
 
 ## Initial Results
 
-  <div align="center">
+ <div align="center">
     
-  https://github.com/user-attachments/assets/a8e1e123-da95-4996-9612-b66ac98f6d88
+https://github.com/user-attachments/assets/a8e1e123-da95-4996-9612-b66ac98f6d88
 
 <img width="600" alt="Longitudinal view of labelled microtubule doublets" src="https://github.com/user-attachments/assets/e6aaa128-6bb0-4d87-893a-e9f9bb2b0407" />
 
-**Figure 1 | Automated microtubule doublet labelling from cryo-ET tomograms using nnInteractive.**
+</div>
+
+> **Figure 1 | Automated microtubule doublet labelling from cryo-ET tomograms using nnInteractive.**
 *(Top)* A user provides sparse point clicks on a tomogram cross-section; nnInteractive propagates
 these into dense 3D segmentation masks covering the microtubule doublets of the axoneme. 
 Labels are generated in a fraction of the time required for manual annotation and serve as 
@@ -108,7 +110,7 @@ averaging in RELION.
 
 <div align="center">
 
-<img width="400" alt="3D U-Net cross-sectional segmentation of axoneme microtubule doublets" ![image](https://github.com/user-attachments/assets/b6970e02-3375-4bdc-a506-a22a791ea95a) />
+<img width="400" alt="3D U-Net cross-sectional segmentation of axoneme microtubule doublets" src="https://github.com/user-attachments/assets/b6970e02-3375-4bdc-a506-a22a791ea95a" />
 
 </div>
 
