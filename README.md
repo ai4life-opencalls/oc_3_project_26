@@ -39,6 +39,8 @@ Data has been deposited on the BioImage Archive with access ID [S-BIAD3427](http
 
 A [Biapy](https://github.com/BiaPyX/BiaPy) **3D U-Net** was trained on the binarized labels to produce a fully automated segmentation model.
 
+
+- Pre-processing: renaming files, splitting into train and test, binarizing GT masks
 - Input: deconvolved tomogram (with Matlab)
 - Output: binary segmentation (background or MT doublet)
 - The network learns the appearance of doublets across different tomograms, noise levels, and orientations
