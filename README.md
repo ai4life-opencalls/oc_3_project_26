@@ -4,13 +4,17 @@
   </a>
 </p>
 
+[![DOI](https://zenodo.org/badge/748659546.svg)](https://zenodo.org/doi/10.5281/zenodo.10830120)
+[![Data on BIA](https://img.shields.io/badge/Data_on_BIA-S--BIAD3427-blue?style=flat)](https://doi.org/10.6019/S-BIAD3427)
+[![Model on BioImage.IO](https://img.shields.io/badge/BioImage.IO-Model-orange?style=flat)]()
+
 # Project #26: Automatic Microtubule Doublet Picking in Cryo-ET Tomograms
 
-Automated pipeline for detecting and orienting microtubule doublets in cryo-electron tomograms of axonemes, with correct polarity assignment for downstream subtomogram averaging in RELION.
+Automated pipeline for detecting microtubule doublets in cryo-electron tomograms of axonemes for downstream subtomogram averaging.
 
 ## Background
 
-Cilia and flagella are built around a highly conserved structure called the **axoneme**, composed of nine microtubule doublets arranged radially around a central pair. Each doublet consists of an A-tubule and a B-tubule fused together, and the proteins that decorate them repeat at defined periodicities along the axoneme (8, 16, 24, 48, or 96 nm).
+Cilia and flagella are built around a highly conserved structure called the **axoneme**, composed of nine microtubule doublets arranged radially around a central pair. Each doublet consists of an A-tubule and a B-tubule fused together, and the proteins that decorate them repeat at defined periodicities along the axoneme.
 
 To resolve these proteins by cryo-electron tomography (cryo-ET) and subtomogram averaging, it is necessary to:
 
@@ -19,64 +23,26 @@ To resolve these proteins by cryo-electron tomography (cryo-ET) and subtomogram 
 3. Assign the **correct polarity** (all doublets pointing in the same direction)
 4. Export **particle positions and orientations** for direct import into RELION
 
-Currently, this process is performed manually using IMOD and custom scripts — a bottleneck that limits throughput and introduces inter-user variability, particularly in polarity assignment.
+Currently, this process is performed manually using IMOD and custom scripts — a bottleneck that limits throughput and introduces inter-user variability, particularly in polarity assignment. 
 
 ## Goals
 
-- **Automate** the detection and tracing of all 9 microtubule doublets in a tomogram
-- **Correctly assign polarity** to each doublet (tip-to-base orientation)
-- **Sample along each doublet** and compute the 3D orientation angles at each position
-- **Export a RELION-compatible particle star file** ready for subtomogram averaging
-- Reduce manual intervention to zero for standard axoneme datasets
+**Automate** the detection and tracing of all 9 microtubule doublets in a tomogram, thus removing a tedious and time consuming manual step.
 
-The pipeline is split into two main stages: **interactive label generation** and **automated 3D segmentation**.
-
-```
-Raw tomogram
-     │
-     ▼
-┌─────────────────────┐
-│   nnInteractive     │  ← sparse user clicks → dense 3D labels
-│  (label generation) │
-└────────┬────────────┘
-         │  training masks
-         ▼
-┌─────────────────────┐
-│     3D U-Net        │  ← learns to segment doublets from labelled data
-│   (segmentation)    │
-└────────┬────────────┘
-         │  binary segmentation mask
-         ▼
-┌─────────────────────┐
-│  Post-processing    │  ← skeletonisation, polarity assignment,
-│  & export           │     sampling, angle computation
-└────────┬────────────┘
-         │
-         ▼
-  RELION star file
-```
 ### Stage 1 — Interactive labelling with nnInteractive
 
-[nnInteractive](https://github.com/MIC-DKFZ/nnInteractive) is used to generate high-quality 3D training labels from a small number of user interactions (point clicks or scribbles), without requiring manual segmentation of every voxel.
+[nnInteractive](https://github.com/MIC-DKFZ/nnInteractive) was used to generate high-quality 3D training labels from a small number of user interactions (point clicks or scribbles), without requiring manual segmentation of every voxel.
+
+Data has been deposited on the BioImage Archive with access ID [S-BIAD3427](https://www.ebi.ac.uk/biostudies/BioImages/studies/S-BIAD3427).
 
 ### Stage 2 — 3D U-Net segmentation
 
-A [Biapy](https://github.com/BiaPyX/BiaPy) **3D U-Net** is trained on the nnInteractive-generated labels to produce a fully automated segmentation model.
+A [Biapy](https://github.com/BiaPyX/BiaPy) **3D U-Net** was trained on the binarized labels to produce a fully automated segmentation model.
 
-- Input: raw or deconvolved tomogram (`.mrc`)
-- Output: multi-class segmentation mask — one label per doublet (1–9) + background
+- Input: deconvolved tomogram (with Matlab)
+- Output: binary segmentation (background or MT doublet)
 - The network learns the appearance of doublets across different tomograms, noise levels, and orientations
 - Once trained, inference runs without any user input
-
-### Stage 3 — Post-processing and RELION export
-
-From the segmented mask, the following steps are applied automatically:
-
-1. **Skeletonisation** — reduce each segmented doublet to a 1D centreline in 3D
-2. **Polarity assignment** — use the known 9-fold symmetry of the axoneme cross-section and the characteristic A/B tubule geometry to assign a consistent tip-to-base orientation to each doublet
-3. **Sampling** — place particle positions at regular intervals along each centreline (configurable spacing, e.g. every 8 nm)
-4. **Angle computation** — compute the three Euler angles (rot, tilt, psi) at each position to align the doublet to a common reference frame
-5. **RELION export** — write a `.star` file with particle coordinates, angles, and tomogram metadata directly importable into RELION 4/5
 
 ## Data example
 <img width="359" height="309" alt="Screenshot 2026-02-09 at 11 06 35" src="https://github.com/user-attachments/assets/ba5ac37f-07a1-4fa4-95d6-946e9afc9b09" />
