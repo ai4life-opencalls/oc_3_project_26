@@ -1,0 +1,56 @@
+# BiaPy version: 3.7.1
+SYSTEM:
+    NUM_CPUS: -1
+
+PROBLEM:
+    TYPE: SEMANTIC_SEG
+    NDIM: 3D
+
+DATA:
+    REFLECT_TO_COMPLETE_SHAPE: true
+    PATCH_SIZE: (32, 64, 64, 1)
+    TRAIN:
+        PATH: ./data/train/images
+        GT_PATH: ./data/train/gt_masks
+        IN_MEMORY: True
+    VAL:
+        SPLIT_TRAIN: 0.1
+    TEST:
+        PATH: ./data/test/images
+        GT_PATH: ./data/test/gt_masks
+        IN_MEMORY: True
+        LOAD_GT: False
+        PADDING: (2,8,8)
+
+AUGMENTOR:
+    ENABLE: True
+    RANDOM_ROT: True
+    VFLIP: True
+    HFLIP: True
+    GRIDMASK: true
+    ZFLIP: True
+    CUTBLUR: true
+    CUTNOISE: false
+    DROPOUT: true
+    MOTION_BLUR: true
+MODEL:
+    N_CLASSES: 2
+    ARCHITECTURE: unet
+    FEATURE_MAPS: [16, 32, 64, 128, 256]
+    LOAD_CHECKPOINT: False
+    Z_DOWN: [1, 1, 1, 1]
+
+TRAIN:
+    ENABLE: True
+    OPTIMIZER: ADAMW
+    LR: 1.E-3
+    BATCH_SIZE: 20
+    EPOCHS: 300
+    PATIENCE: 30
+    LR_SCHEDULER:
+        NAME: "onecycle" # use one-cycle learning rate scheduler
+
+TEST:
+    ENABLE: True
+    AUGMENTATION: False
+    FULL_IMG: False
