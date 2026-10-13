@@ -69,8 +69,7 @@ https://github.com/user-attachments/assets/a8e1e123-da95-4996-9612-b66ac98f6d88
 > *(Bottom)* Longitudinal slice through the tomogram showing four individually colour-coded microtubule
 > doublets (red, teal, yellow, and light green) traced along their full length. Each colour corresponds
 > to a distinct doublet identity, demonstrating that the labelling correctly separates adjacent doublets
-> running in parallel — a critical prerequisite for polarity assignment and downstream subtomogram
-> averaging in RELION.
+> running in parallel.
 
 ## 3D U-Net Segmentation Output
 
@@ -84,9 +83,6 @@ https://github.com/user-attachments/assets/a8e1e123-da95-4996-9612-b66ac98f6d88
 > Tomogram cross-section showing the predicted segmentation mask (green) overlaid on the raw
 > cryo-ET data. The 3D U-Net correctly identifies the nine microtubule doublets arranged in the
 > characteristic ring geometry of the axoneme, as well as the central pair of microtubules.
-> The asymmetric distribution of segmented doublets around the ring reflects the inherent
-> structural polarity of the axoneme — a key feature that the model learns to capture and
-> that enables downstream polarity assignment without manual intervention.
 
 
 ---
