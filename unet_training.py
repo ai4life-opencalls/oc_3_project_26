@@ -34,14 +34,11 @@ def run():
 
     biapy.run_job()
 
-    # prediction
-    test_image = "./data/test/images/test.tif"
-    prediction = biapy.predict(test_image)
-    # saving the prediction
-    imsave("prediction.tif", prediction)
-
     # calculate dice score
     ground_truth = imread("./data/test/gt_masks/test.tif")
+    prediction = imread(
+        "./output/mt_semantic/results/mt_semantic_1/per_image_binarized/test.tif"
+    )
     dice_score = calculate_dice_numpy(ground_truth, prediction)
     print("Dice score:", dice_score)
 
