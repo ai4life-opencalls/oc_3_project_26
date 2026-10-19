@@ -6,7 +6,7 @@
 
 [![DOI](https://zenodo.org/badge/.svg)]()
 [![Data on BIA](https://img.shields.io/badge/Data_on_BIA-S--BIAD3427-blue?style=flat)](https://doi.org/10.6019/S-BIAD3427)
-[![Model on BioImage.IO](https://img.shields.io/badge/BioImage.IO-Model-orange?style=flat)]()
+[![Model on BioImage.IO](https://img.shields.io/badge/BioImage.IO-Model-orange?style=flat)](https://bioimage.io/#/artifacts/fast-ant)
 
 # Project #26: Automatic Microtubule Doublet Picking in Cryo-ET Tomograms
 
