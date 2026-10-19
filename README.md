@@ -4,7 +4,7 @@
   </a>
 </p>
 
-[![DOI](https://zenodo.org/badge/.svg)]()
+[![DOI](https://zenodo.org/badge/.svg)](https://doi.org/10.5281/zenodo.23476810)
 [![Data on BIA](https://img.shields.io/badge/Data_on_BIA-S--BIAD3427-blue?style=flat)](https://doi.org/10.6019/S-BIAD3427)
 [![Model on BioImage.IO](https://img.shields.io/badge/BioImage.IO-Model-orange?style=flat)](https://bioimage.io/#/artifacts/fast-ant)
 
